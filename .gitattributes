@@ -1,0 +1,181 @@
+\# filter=lfs diff=lfs merge=lfs -text
+# This file contains rules that control how Git handles binary and text files, including line endings
+#
+# Make sure Windows batch files preserve CR/LF line endings, otherwise they may not be able to execute.  Windows
+# batch files require a CR/LF for labels to work properly, otherwise they may fail when labels straddle 512-byte
+# block boundaries.  This is important when files are downloaded through a zip archive that was authored on a
+# Linux machine (the default behavior on GitHub)
+*.bat eol=crlf
+# A place to store art
+Art/** filter=lfs diff=lfs merge=lfs binary 
+# The in game content is binary
+Projects/**/Content/** filter=lfs diff=lfs merge=lfs binary 
+Projects/**/DerivedDataCache/** filter=lfs diff=lfs merge=lfs binary
+Projects/**/Binaries/** filter=lfs diff=lfs merge=lfs binary 
+# UE file types
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+*.upack filter=lfs diff=lfs merge=lfs binary
+*.ddc filter=lfs diff=lfs merge=lfs binary
+# Raw Content types
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.3ds filter=lfs diff=lfs merge=lfs -text
+*.dds filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.tif filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.xcf filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.bink filter=lfs diff=lfs merge=lfs -text
+# For when folks check in compressed folders
+*.zip filter=lfs diff=lfs merge=lfs binary
+*.7z filter=lfs diff=lfs merge=lfs binary
+*.gz filter=lfs diff=lfs merge=lfs binary
+*.pkg filter=lfs diff=lfs merge=lfs binary
+*.tar filter=lfs diff=lfs merge=lfs binary
+*.tar.* filter=lfs diff=lfs merge=lfs binary
+*.bz2 filter=lfs diff=lfs merge=lfs binary
+*.tgz filter=lfs diff=lfs merge=lfs binary
+*.dmg filter=lfs diff=lfs merge=lfs binary
+*.dsym filter=lfs diff=lfs merge=lfs binary
+*.debug filter=lfs diff=lfs merge=lfs binary
+# Executables & Binaries
+*.exe filter=lfs diff=lfs merge=lfs binary
+*.dll filter=lfs diff=lfs merge=lfs binary
+*.lib filter=lfs diff=lfs merge=lfs binary
+*.bin filter=lfs diff=lfs merge=lfs binary
+*.msi filter=lfs diff=lfs merge=lfs binary
+# Filters for CPP compliation objects
+*.pdb filter=lfs diff=lfs merge=lfs binary
+*.pch filter=lfs diff=lfs merge=lfs binary
+*.obj filter=lfs diff=lfs merge=lfs binary
+*.elf filter=lfs diff=lfs merge=lfs binary
+*.so filter=lfs diff=lfs merge=lfs binary
+*.so.* filter=lfs diff=lfs merge=lfs binary
+*.a filter=lfs diff=lfs merge=lfs binary
+*.dylib filter=lfs diff=lfs merge=lfs binary
+*.lld filter=lfs diff=lfs merge=lfs binary
+*.dbg filter=lfs diff=lfs merge=lfs binary
+*.glb filter=lfs diff=lfs merge=lfs binary
+*.dsym filter=lfs diff=lfs merge=lfs binary
+*.debug filter=lfs diff=lfs merge=lfs binary
+# docs and 3rd party sdk stuff
+*.chm filter=lfs diff=lfs merge=lfs binary
+*.pdf filter=lfs diff=lfs merge=lfs binary
+*.odt filter=lfs diff=lfs merge=lfs -text
+*.docx filter=lfs diff=lfs merge=lfs -text
+# ===========================================
+# Filters for UnrealEngine itself
+FeaturePacks/** filter=lfs diff=lfs merge=lfs binary 
+# not sure if error or?
+*.dmp filter=lfs diff=lfs merge=lfs binary
+*.aar filter=lfs diff=lfs merge=lfs binary
+# These files are large with no extension
+GVRSDK filter=lfs diff=lfs merge=lfs binary
+FBSDKCoreKit filter=lfs diff=lfs merge=lfs binary
+ARCoreCloudAnchors filter=lfs diff=lfs merge=lfs binary
+ispc filter=lfs diff=lfs merge=lfs binary
+ispc_osx filter=lfs diff=lfs merge=lfs binary
+icupkg filter=lfs diff=lfs merge=lfs binary
+"Chromium Embedded Framework" filter=lfs diff=lfs merge=lfs binary
+phonon_bundle filter=lfs diff=lfs merge=lfs binary
+ue4_denorm filter=lfs diff=lfs merge=lfs binary
+gencmn filter=lfs diff=lfs merge=lfs binary
+gendict filter=lfs diff=lfs merge=lfs binary
+genrb filter=lfs diff=lfs merge=lfs binary
+pkgdata filter=lfs diff=lfs merge=lfs binary
+\#[[:space:]]batch[[:space:]]files[[:space:]]require[[:space:]]a[[:space:]]CR/LF[[:space:]]for[[:space:]]labels[[:space:]]to[[:space:]]work[[:space:]]properly,[[:space:]]otherwise[[:space:]]they[[:space:]]may[[:space:]]fail[[:space:]]when[[:space:]]labels[[:space:]]straddle[[:space:]]512-byte filter=lfs diff=lfs merge=lfs -text
+*.bat[[:space:]]eol=crlf filter=lfs diff=lfs merge=lfs -text
+"Chromium[[:space:]]Embedded[[:space:]]Framework"[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+phonon_bundle[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.png[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.exe[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.lld[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.dbg[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.odt[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]These[[:space:]]files[[:space:]]are[[:space:]]large[[:space:]]with[[:space:]]no[[:space:]]extension filter=lfs diff=lfs merge=lfs -text
+*.umap[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.glb[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.docx[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+FeaturePacks/**[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary[[:space:]] filter=lfs diff=lfs merge=lfs -text
+*.jpg[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.mp4[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.zip[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.pdb[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+Projects/**/Binaries/**[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary[[:space:]] filter=lfs diff=lfs merge=lfs -text
+Art/**[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary[[:space:]] filter=lfs diff=lfs merge=lfs -text
+*.3ds[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.lib[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.so.*[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+FBSDKCoreKit[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]Make[[:space:]]sure[[:space:]]Windows[[:space:]]batch[[:space:]]files[[:space:]]preserve[[:space:]]CR/LF[[:space:]]line[[:space:]]endings,[[:space:]]otherwise[[:space:]]they[[:space:]]may[[:space:]]not[[:space:]]be[[:space:]]able[[:space:]]to[[:space:]]execute.[[:space:]][[:space:]]Windows filter=lfs diff=lfs merge=lfs -text
+*.pkg[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.bz2[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.so[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.a[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]not[[:space:]]sure[[:space:]]if[[:space:]]error[[:space:]]or? filter=lfs diff=lfs merge=lfs -text
+*.dmp[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+ue4_denorm[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+Projects/**/Content/**[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary[[:space:]] filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]This[[:space:]]file[[:space:]]contains[[:space:]]rules[[:space:]]that[[:space:]]control[[:space:]]how[[:space:]]Git[[:space:]]handles[[:space:]]binary[[:space:]]and[[:space:]]text[[:space:]]files,[[:space:]]including[[:space:]]line[[:space:]]endings filter=lfs diff=lfs merge=lfs -text
+*.gif[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.gz[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.dsym[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.pdf[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]A[[:space:]]place[[:space:]]to[[:space:]]store[[:space:]]art filter=lfs diff=lfs merge=lfs -text
+*.uasset[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.psd[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+ARCoreCloudAnchors[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+icupkg[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.dds[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]Linux[[:space:]]machine[[:space:]](the[[:space:]]default[[:space:]]behavior[[:space:]]on[[:space:]]GitHub) filter=lfs diff=lfs merge=lfs -text
+*.bink[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.pch[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.dylib[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+genrb[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+[[:space:]] filter=lfs diff=lfs merge=lfs -text
+*.7z[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.dmg[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.bin[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]Filters[[:space:]]for[[:space:]]CPP[[:space:]]compliation[[:space:]]objects filter=lfs diff=lfs merge=lfs -text
+ispc[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]block[[:space:]]boundaries.[[:space:]][[:space:]]This[[:space:]]is[[:space:]]important[[:space:]]when[[:space:]]files[[:space:]]are[[:space:]]downloaded[[:space:]]through[[:space:]]a[[:space:]]zip[[:space:]]archive[[:space:]]that[[:space:]]was[[:space:]]authored[[:space:]]on[[:space:]]a filter=lfs diff=lfs merge=lfs -text
+*.fbx[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.jpeg[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.wav[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]For[[:space:]]when[[:space:]]folks[[:space:]]check[[:space:]]in[[:space:]]compressed[[:space:]]folders filter=lfs diff=lfs merge=lfs -text
+*.dll[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]docs[[:space:]]and[[:space:]]3rd[[:space:]]party[[:space:]]sdk[[:space:]]stuff filter=lfs diff=lfs merge=lfs -text
+*.chm[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]Raw[[:space:]]Content[[:space:]]types filter=lfs diff=lfs merge=lfs -text
+*.exr[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.msi[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]=========================================== filter=lfs diff=lfs merge=lfs -text
+GVRSDK[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+ispc_osx[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+gencmn[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+gendict[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+Projects/**/DerivedDataCache/**[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]The[[:space:]]in[[:space:]]game[[:space:]]content[[:space:]]is[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.mp3[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.tgz[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+pkgdata[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.upack[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.xcf[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.tar.*[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.debug[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]Filters[[:space:]]for[[:space:]]UnrealEngine[[:space:]]itself filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]UE[[:space:]]file[[:space:]]types filter=lfs diff=lfs merge=lfs -text
+*.elf[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.aar[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.ddc[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+*.tif[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.tar[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
+\#[[:space:]]Executables[[:space:]]&[[:space:]]Binaries filter=lfs diff=lfs merge=lfs -text
+*.obj[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]binary filter=lfs diff=lfs merge=lfs -text
