@@ -10,21 +10,18 @@ class AI_FARMER_API AGameplayTaggableActor : public AActor, public IGameplayTagA
 {
 	GENERATED_BODY()
 	
-public:	
-	// Sets default values for this actor's properties
-	AGameplayTaggableActor();
+public:
+	AGameplayTaggableActor() { PrimaryActorTick.bCanEverTick = true; };
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	virtual void BeginPlay() override { Super::BeginPlay(); };
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	virtual void Tick(float DeltaTime) override { Super::Tick(DeltaTime); };
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FGameplayTagContainer GameplayTagContainer;
 
 	// Inherited via IGameplayTagAssetInterface
-	void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override;
+	void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override { TagContainer = GameplayTagContainer; };
 };
